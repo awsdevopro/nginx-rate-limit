@@ -1,0 +1,19 @@
+[warn]  783: *1949 delaying request, excess: 1.000, 
+[error] 782: *1947 limiting requests, excess: 2.000
+[error] 779: *1950 limiting requests, excess: 1.990
+[warn]  776: *1956 delaying request, excess: 1.000, 
+[error] 779: *1952 limiting requests, excess: 2.000
+[error] 779: *1953 limiting requests, excess: 2.000
+[error] 779: *1955 limiting requests, excess: 2.000
+[error] 779: *1954 limiting requests, excess: 2.000
+
+979 200 
+979 429 
+980 429 
+080 200 
+980 200 
+980 429 
+980 429 
+980 429 
+980 429 
+080 200 
