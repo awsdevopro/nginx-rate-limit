@@ -1,5 +1,5 @@
 #1
-docker run -itd -v $PWD/n1:/var/log/nginx -v $PWD/n1.conf:/etc/nginx/conf.d/default.conf -v $PWD/nginx.conf:/etc/nginx/nginx.conf -v $PWD/index.php:/etc/nginx/html/index.php --name n1 -p 8081:8081 nginx:latest
+docker run -itd -v $PWD/n1:/var/log/nginx -v $PWD/n1.conf:/etc/nginx/conf.d/default.conf -v $PWD/nginx.conf:/etc/nginx/nginx.conf -v $PWD/index.html:/etc/nginx/html/index.html --name n1 -p 8081:8081 nginx:latest
 #2
 docker run -itd -v $PWD/n2:/var/log/nginx -v $PWD/n2.conf:/etc/nginx/conf.d/default.conf --name n2 -p 8082:8082 nginx:latest
 #3
@@ -37,3 +37,24 @@ docker run -it --rm -t rufus/siege-engine -b -r 1 -c 30 curl http://172.17.0.1:8
 Document: https://www.joedog.org/articles-tuning/
 
 docker run -itd --rm -p 9000:9000 --name php-fpm php:fpm
+
+#1
+docker run -itd -v $PWD/n1:/var/log/nginx -v $PWD/n1.conf:/etc/nginx/conf.d/default.conf -v $PWD/nginx.conf:/etc/nginx/nginx.conf -v $PWD/index.php:usr/share/nginx/html/index.php --name n1 -p 8081:8081 nginx:latest
+
+## Git push from local directory:
+
+git init
+git add .
+git commit -m "initial commit"
+git remote add origin https://github.com/awsdevopro/nginx-rate-limit.git
+git push origin master 
+
+## Remove remote files:
+
+Delete remote files
+git rm -r --cached files_to_be_deleted 
+Git commit -am “add a commit message you consider”
+git reset HEAD --hard 
+git status
+
+## git config --global credential.helper 'cache --timeout=360000' 
